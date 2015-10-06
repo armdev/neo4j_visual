@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>jQuery UI Matrix Widget</title>
+        <link class="jsbin" href="jquery-ui.css" rel="stylesheet" type="text/css">
+        <link class="jsbin" href="jquery.ui.matrix.css" rel="stylesheet" type="text/css">
+        <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.js"></script>
+        <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/jquery-ui.js"></script>
+        <script class="jsbin" src="http://www.vitaligraf.de/jQuery/js/jquery.ui.matrix.js"></script>
+    </head>
+    <body>
+
+        <button id="mb" onclick="toggleMatrix()">show Matrix</button> (with random assignment of user to the groups)
+        <div id="test"></div>
+
+    </body>
+    <script type="text/javascript">
+
+        function toggleMatrix() {
+            var matrix = $('#test .ui-matrix');
+            if (matrix.length) {
+                $('#test').matrix('destroy');
+                $('#mb').text('show Matrix');
+            } else {
+                $('#test').matrix({
+                    title: "groups & users",
+                    width:  1000,
+                    heigh:  900,
+                    cols: {0: "Yerevan", 2: "Goris", 3: "Kapan", 2: "Abovian", 4: "Sisian"},
+                    rows: {1: "Yerevan", 0: "Goris", 0: "Kapan", 0: "Abovian", 11: "Sisian"},
+                    
+                    fillCell: function(col, row) {
+                        el = $('<input \/>').attr({
+                            type: 'text',
+                            userid: col,
+                            groupid: row
+                        }).click(function() {
+                            userid = $(this).attr('userid');
+                            groupid = $(this).attr('groupid');
+                            if ($(this).attr('checked')) {
+                             //   alert('insert user (' + userid.valueOf() + ') into group (' + groupid + ')');
+                            } else {
+                             //   alert('remove user (' + userid + ') from group (' + groupid + ')');
+                            }
+                        });
+                        
+                        return el;
+                    }
+                });
+                $('#mb').text('destroy Matrix');
+            }
+        }
+    </script>
+
+</html>

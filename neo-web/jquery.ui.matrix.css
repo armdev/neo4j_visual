@@ -1,0 +1,34 @@
+@CHARSET "UTF-8";
+/*
+ * jQuery UI Matrix @VERSION
+ *
+ * Copyright 2010, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * Demo:
+ * http://jsbin.com/uwisa3/15/edit
+ * 
+ * Vitali Graf <info@vitaligraf.de>
+ */
+
+
+.ui-matrix { padding: .2em .2em 0; display: inline-block;}
+.ui-matrix .ui-matrix-header { position:relative; padding:.2em 0; text-align: center; }
+.ui-matrix table {width: 100%; font-size: .9em; border-collapse: collapse; margin:0 0 .4em; }
+.ui-matrix th, .ui-matrix .th { padding: .7em .3em; font-weight: bold; border: 0; text-align: left; }
+.ui-matrix th {text-align: center;}
+.ui-matrix td { border: 0; padding: 1px; text-align: center;}
+.ui-matrix .ui-matrix-buttonpane { background-image: none; margin: .7em 0 0 0; padding:0 .2em; border-left: 0; border-right: 0; border-bottom: 0; }
+.ui-matrix .ui-matrix-buttonpane button { float: right; margin: .5em .2em .4em; cursor: pointer; padding: .2em .6em .3em .6em; width:auto; overflow:visible; }
+.ui-matrix .ui-matrix-buttonpane button.ui-matrix-current { float:left; }
+
+/* RTL support */
+.ui-matrix-rtl { direction: rtl; }
+.ui-matrix-rtl .ui-matrix-prev { right: 2px; left: auto; }
+.ui-matrix-rtl .ui-matrix-next { left: 2px; right: auto; }
+.ui-matrix-rtl .ui-matrix-prev:hover { right: 1px; left: auto; }
+.ui-matrix-rtl .ui-matrix-next:hover { left: 1px; right: auto; }
+.ui-matrix-rtl .ui-matrix-buttonpane { clear:right; }
+.ui-matrix-rtl .ui-matrix-buttonpane button { float: left; }
+.ui-matrix-rtl .ui-matrix-buttonpane button.ui-matrix-current { float:right; }
